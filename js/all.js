@@ -47,13 +47,12 @@ function listFun(e) {
 function postData(location) {
   var thumbnail = "";
   for (let i = 0; i < location.length; i++) {
-    thumbnail +=
-      `<div class="card thumbnail m-3">
-                <div class="pic">
+    thumbnail += `<a href="${location[i].Picture1}" class="card thumbnail mb-3">
+                <div class="pic" style="background:url(${
+                  location[i].Picture1
+                })">
                     <h4 class="picTitle">${location[i].Name}</h4>
-                    <span class="picLocation">` +
-      location[i].Zone +
-      `</span>
+                    <span class="picLocation">${location[i].Zone}</span>
                 </div>
                 <div class="caption">
                     <ul class="areaList">
@@ -66,7 +65,7 @@ function postData(location) {
                         <span class="areaTag">${location[i].Ticketinfo}</span>
                     </div>
                 </div>
-        </div>
+        </a>
             `;
   }
   viewBlock.innerHTML = thumbnail;
@@ -110,4 +109,3 @@ function funcA() {
   }
   return arrayA;
 }
-

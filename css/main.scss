@@ -1,17 +1,27 @@
-$fz:1em;
-$borderRadiusMain:5px;
-$colorPurple:rgba(138, 130, 204, 1);
-$colorOrange:rgba(255, 167, 130, 1);
-$colorYellow:rgba(245, 208, 5, 1);
-$colorBlue:rgba(85, 154, 200, 1);
+$fz: 1em;
+$borderRadiusMain: 5px;
+$colorPurple: rgba(138, 130, 204, 1);
+$colorOrange: rgba(255, 167, 130, 1);
+$colorYellow: rgba(245, 208, 5, 1);
+$colorBlue: rgba(85, 154, 200, 1);
 // --------------------------------------------------------------------------
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
 body {
     font-size: 15px;
-    font-family: '微軟正黑體', Helvetica, sans-serif;
+    font-family: "微軟正黑體", Helvetica, sans-serif;
     background: rgb(246, 247, 246);
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 6%;
+    margin: 0;
 }
 
 .wrap {
+    // header
     header {
         height: 380px;
         width: 100%;
@@ -37,175 +47,191 @@ body {
             }
         }
     }
-    .areaHito {
-        max-width: 800px; // height: 112px;
-        border-radius: $borderRadiusMain;
-        margin: 0 auto;
-        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.20);
-        position: relative;
-        top: -20px;
-        background: #fff;
-        padding: 20px 26px;
-        h4.title {
-            font-size: $fz + 0.1em;
-            font-weight: normal;
-            margin: 0;
-            margin-bottom: 14px;
+    main {
+        .areaHito {
+            max-width: 800px; // height: 112px;
+            border-radius: $borderRadiusMain;
+            margin: 0 auto;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+            position: relative;
+            top: -20px;
+            background: #fff;
+            padding: 20px 26px;
+            h4.title {
+                font-size: $fz + 0.1em;
+                font-weight: normal;
+                margin: 0;
+                margin-bottom: 14px;
+            }
+            .areaHitoList {
+                display: flex;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                padding: 0 25px;
+                li {
+                    list-style: none;
+                    margin-right: 30px;
+                    margin-bottom: 20px;
+                    &:nth-of-type(4n + 1) {
+                        a {
+                            background: $colorPurple;
+                        }
+                    }
+                    &:nth-of-type(4n + 2) {
+                        a {
+                            background: $colorOrange;
+                        }
+                    }
+                    &:nth-of-type(4n + 3) {
+                        a {
+                            background: $colorYellow;
+                        }
+                    }
+                    &:nth-of-type(4n + 4) {
+                        a {
+                            background: $colorBlue;
+                        }
+                    }
+                    a {
+                        width: 130px;
+                        height: 42px;
+                        line-height: 42px;
+                        text-align: center;
+                        border-radius: $borderRadiusMain;
+                        background: gold;
+                        display: block;
+                        text-decoration: none;
+                        color: #fff;
+                    }
+                }
+            }
         }
-        .areaHitoList {
-            display: flex;
-            justify-content: flex-start;
-            flex-wrap: wrap;
-            padding: 0 25px;
-            li {
-                list-style: none;
-                margin-right: 30px;
+        .areaBlock {
+            .areaTitle {
+                text-align: center;
+                font-size: $fz + 1.2em;
                 margin-bottom: 20px;
-                &:nth-of-type(4n + 1) {
-                    a {
-                        background: $colorPurple;
+                color: $colorPurple;
+                font-weight: normal;
+            }
+            .thumbnail {
+                padding: 0;
+                box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+                border: none;
+                border-radius: 0;
+                text-decoration: none;
+                .pic {
+                    position: relative;
+                    background: url(http://khh.travel/FileArtPic.ashx?id=1846&w=1280&h=960);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    width: 100%;
+                    height: 200px;
+                    .picTitle {
+                        position: absolute;
+                        left: 1rem;
+                        bottom: 1rem;
+                        color: #fff;
+                        font-size: $fz + 1em;
+                        margin: 0;
+                        font-weight: normal;
+                        text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+                    }
+                    .picLocation {
+                        position: absolute;
+                        right: 1rem;
+                        bottom: 1rem;
+                        font-size: $fz + 0.2em;
+                        color: #fff;
+                        font-weight: normal;
+                        text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
                     }
                 }
-                &:nth-of-type(4n +2) {
-                    a {
-                        background: $colorOrange;
+                .caption {
+                    position: relative;
+                    .areaList {
+                        margin: 0; // padding-left: 1rem - 0.6rem;
+                        padding: 15px;
+                        li {
+                            color: #333;
+                            position: relative;
+                            list-style: none;
+                            font-size: $fz + 0.2em;
+                            padding-left: 24px;
+                            margin-bottom: 6px;
+                            &:before {
+                                position: absolute;
+                                left: 0;
+                                width: 20px;
+                                display: flex;
+                                justify-content: center;
+                            }
+                            &.areaTime {
+                                &:before {
+                                    content: "\f017";
+                                    font-family: FontAwesome;
+                                    color: $colorPurple;
+                                    font-size: $fz + 0.2em;
+                                    top: -3px;
+                                }
+                            }
+                            &.areaLocation {
+                                &:before {
+                                    content: "\f041";
+                                    font-family: FontAwesome;
+                                    color: $colorOrange;
+                                    font-size: $fz + 0.4em;
+                                    top: -4px;
+                                }
+                            }
+                            &.areaPhone {
+                                &:before {
+                                    content: "\f10b";
+                                    font-family: FontAwesome;
+                                    color: $colorBlue;
+                                    font-size: $fz + 0.4em;
+                                    top: -4px;
+                                }
+                            }
+                        }
                     }
-                }
-                &:nth-of-type(4n + 3) {
-                    a {
-                        background: $colorYellow;
+                    .tag {
+                        position: absolute;
+                        right: 0.6rem;
+                        bottom: 0.6rem;
+                        font-size: $fz + 0.2em;
+                        i {
+                            color: $colorYellow;
+                            font-size: $fz + 0.2em;
+                        }
                     }
-                }
-                &:nth-of-type(4n + 4) {
-                    a {
-                        background: $colorBlue;
-                    }
-                }
-                a {
-                    width: 130px;
-                    height: 42px;
-                    line-height: 42px;
-                    text-align: center;
-                    border-radius: $borderRadiusMain;
-                    background: gold;
-                    display: block;
-                    text-decoration: none;
-                    color: #fff;
                 }
             }
         }
     }
-    .areaBlock {
-        .areaTitle {
-            text-align: center;
-            font-size: $fz + 1.2em;
-            margin-bottom: 20px;
-            color: $colorPurple;
-            font-weight: normal;
-        }
-        .thumbnail {
-            padding: 0;
-            box-shadow: 0 0 6px rgba(0, 0, 0, 0.20);
-            border: none;
-            border-radius: 0;
-            .pic {
-                position: relative;
-                background: url(http://khh.travel/FileArtPic.ashx?id=1846&w=1280&h=960);
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center center;
-                width: 100%;
-                height: 200px;
-                .picTitle {
-                    position: absolute;
-                    left: 1rem;
-                    bottom: 1rem;
-                    color: #fff;
-                    font-size: $fz + 1em;
-                    margin: 0;
-                    font-weight: normal;
-                    text-shadow: 0 0 6px rgba(0, 0, 0, 0.60);
-                }
-                .picLocation {
-                    position: absolute;
-                    right: 1rem;
-                    bottom: 1rem;
-                    font-size: $fz + 0.2em;
-                    color: #fff;
-                    font-weight: normal;
-                    text-shadow: 0 0 6px rgba(0, 0, 0, 0.60);
-                }
-            }
-            .caption {
-                position: relative;
-                .areaList {
-                    margin: 0; // padding-left: 1rem - 0.6rem;
-                    padding: 15px;
-                    li {
-                        position: relative;
-                        list-style: none;
-                        font-size: $fz + 0.2em;
-                        padding-left: 24px;
-                        margin-bottom: 6px;
-                        &:before {
-                            position: absolute;
-                            left: 0;
-                            width: 20px;
-                            display: flex;
-                            justify-content: center;
-                        }
-                        &.areaTime {
-                            &:before {
-                                content: '\f017';
-                                font-family: FontAwesome;
-                                color: $colorPurple;
-                                font-size: $fz + 0.2em;
-                                top: -3px;
-                            }
-                        }
-                        &.areaLocation {
-                            &:before {
-                                content: '\f041';
-                                font-family: FontAwesome;
-                                color: $colorOrange;
-                                font-size: $fz + 0.4em;
-                                top: -4px;
-                            }
-                        }
-                        &.areaPhone {
-                            &:before {
-                                content: '\f10b';
-                                font-family: FontAwesome;
-                                color: $colorBlue;
-                                font-size: $fz + 0.4em;
-                                top: -4px;
-                            }
-                        }
-                    }
-                }
-                .tag {
-                    position: absolute;
-                    right: 0.6rem;
-                    bottom: 0.6rem;
-                    font-size: $fz + 0.2em;
-                    i {
-                        color: $colorYellow;
-                        font-size: $fz + 0.2em;
-                    }
-                }
-            }
+    footer {
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background: lightseagreen;
+        padding: 15px 0;
+        text-align: center;
+        a {
+            color: #fff;
+            text-decoration: none;
         }
     }
 }
 
 // component
 // select2
-.select2_basic {}
-
 .select2-container--material {
     .selection {
         .select2-selection {
-            background: rgba(255, 255, 255, .6);
+            background: rgba(255, 255, 255, 0.6);
             border: 3px solid #fff;
             height: 50px;
             display: flex;
@@ -225,7 +251,7 @@ body {
         .select2-results__options {
             .select2-results__option {
                 padding: 5px 12px;
-                background: rgba(255, 255, 255, .6);
+                background: rgba(255, 255, 255, 0.6);
                 &:hover {
                     background: $colorBlue;
                     color: #fff;
@@ -246,15 +272,15 @@ body {
         &:after {
             display: inline-block;
             flex: 1;
-            background-image: linear-gradient(90deg, #fff, #fff, $colorBlue, $colorBlue);
+            background-image: linear-gradient( 90deg, #fff, #fff, $colorBlue, $colorBlue);
             background-size: 10px 10px;
             height: 1px;
         }
         &:before {
-            content: '';
+            content: "";
         }
         &:after {
-            content: '';
+            content: "";
         }
         i {
             width: 25px;
@@ -274,8 +300,6 @@ body {
 // 瀑布流
 
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
-
-
 
 .card-columns {
     column-count: 1;
@@ -298,7 +322,7 @@ body {
 
 @media (min-width: 992px) {
     .card-columns {
-        column-count: 3;
+        column-count: 2;
     }
 }
 
@@ -307,13 +331,6 @@ body {
 
 @media (min-width: 1200px) {
     .card-columns {
-        column-count: 3;
+        column-count: 2;
     }
 }
-
-// .card {
-//     margin: 0;
-//     border: none;
-//     background: none;
-//     margin-bottom: 1.2rem !important;
-// }
