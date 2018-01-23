@@ -23,7 +23,7 @@ domList.addEventListener("click", listFun, false);
 
 // 設定初始值
 function funcB() {
-  var arraySet = funcSet("內門區");
+  var arraySet = funcSet("三民區");
   postData(arraySet);
 }
 
@@ -45,11 +45,10 @@ function listFun(e) {
 
 // 將符合選擇地區的資訊 post 出來
 function postData(location) {
-  var string = "";
+  var thumbnail = "";
   for (let i = 0; i < location.length; i++) {
-    string +=
-      `<div class="col-xs-12 col-sm-6">
-            <div class="thumbnail">
+    thumbnail +=
+      `<div class="card thumbnail m-3">
                 <div class="pic">
                     <h4 class="picTitle">${location[i].Name}</h4>
                     <span class="picLocation">` +
@@ -67,11 +66,10 @@ function postData(location) {
                         <span class="areaTag">${location[i].Ticketinfo}</span>
                     </div>
                 </div>
-            </div>
         </div>
             `;
   }
-  viewBlock.innerHTML = string;
+  viewBlock.innerHTML = thumbnail;
 }
 
 // 從 alldata 裡面去找尋地區跟 string 相同的資料並回傳
@@ -112,3 +110,4 @@ function funcA() {
   }
   return arrayA;
 }
+
