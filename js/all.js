@@ -10,21 +10,41 @@ xhr.send(null);
 xhr.onload = function() {
   _data = JSON.parse(xhr.responseText);
   funcA(_data);
-  funcB();
+  funcList();
 };
 // DOM
 var domList = document.querySelector(".areaHitoList");
 var domSelect = document.querySelector(".selectTravel");
 var viewBlock = document.querySelector(".viewBlock");
+var viewTable = document.querySelector(".viewTable");
 var title = document.querySelector(".areaTitle");
+var pipePic = document.querySelector("#pipePic");
+var pipeTable = document.querySelector("#pipeTable");
 // 監聽
 domSelect.addEventListener("change", selectChangeFun, false);
 domList.addEventListener("click", listFun, false);
 
+pipeTable.addEventListener("click", function(e) {
+  e.preventDefault();
+  funcTable();
+  viewBlock.style.display = "none";
+  viewTable.style.display = "block";
+});
+pipePic.addEventListener("click", function(e) {
+  e.preventDefault();
+  funcList();
+  viewBlock.style.display = "block";
+  viewTable.style.display = "none";
+});
+
 // 設定初始值
-function funcB() {
+function funcList() {
   var arraySet = funcSet("三民區");
   postData(arraySet);
+}
+function funcTable() {
+  var arraySet = funcSet("三民區");
+  drawTable(arraySet, "matchData");
 }
 
 // 選擇select觸發
@@ -43,7 +63,7 @@ function listFun(e) {
   title.textContent = string;
 }
 
-// 將符合選擇地區的資訊 post 出來
+// 將符合選擇地區的資訊 post 出來 - 圖文
 function postData(location) {
   var thumbnail = "";
   for (let i = 0; i < location.length; i++) {
@@ -69,6 +89,26 @@ function postData(location) {
             `;
   }
   viewBlock.innerHTML = thumbnail;
+}
+
+// 表格
+function drawTable(location, tbody) {
+  var tr, td;
+  tbody = document.getElementById(tbody);
+
+  for (var i = 0; i < location.length; i++) {
+    tr = tbody.insertRow(tbody.rows.length);
+    td = tr.insertCell(tr.cells.length);
+    td.innerHTML = location[i].Zone;
+    td = tr.insertCell(tr.cells.length);
+    td.innerHTML = location[i].Name;
+    td = tr.insertCell(tr.cells.length);
+    td.innerHTML = location[i].Add;
+    td = tr.insertCell(tr.cells.length);
+    td.innerHTML = `<img src="${location[i].Picture1}" style="width:120px;">`;
+    td = tr.insertCell(tr.cells.length);
+    td.innerHTML = location[i].Opentime;
+  }
 }
 
 // 從 alldata 裡面去找尋地區跟 string 相同的資料並回傳
