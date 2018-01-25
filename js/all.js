@@ -20,6 +20,7 @@ var viewTable = document.querySelector(".viewTable");
 var title = document.querySelector(".areaTitle");
 var pipePic = document.querySelector("#pipePic");
 var pipeTable = document.querySelector("#pipeTable");
+
 // 監聽
 domSelect.addEventListener("change", selectChangeFun, false);
 domList.addEventListener("click", listFun, false);
@@ -38,6 +39,7 @@ pipePic.addEventListener("click", function(e) {
 });
 
 // 設定初始值
+viewTable.style.display = "none";
 function funcList() {
   var arraySet = funcSet("三民區");
   postData(arraySet);
@@ -52,50 +54,67 @@ function selectChangeFun(e) {
   var string = e.target.value;
   var arraySet = funcSet(string);
   postData(arraySet);
+  drawTable(arraySet, "matchData");
   title.textContent = string;
 }
 // 點擊按鈕觸發
 function listFun(e) {
   e.preventDefault();
+  if (e.target.nodeName !== "A") {
+    return false;
+  }
   var string = e.target.textContent;
   var arraySet = funcSet(string);
   postData(arraySet);
+  drawTable(arraySet, "matchData");
   title.textContent = string;
 }
 
 // 將符合選擇地區的資訊 post 出來 - 圖文
 function postData(location) {
   var thumbnail = "";
-  for (let i = 0; i < location.length; i++) {
-    thumbnail += `<a href="${location[i].Picture1}" class="card thumbnail mb-3">
-                <div class="pic" style="background:url(${
-                  location[i].Picture1
-                })">
-                    <h4 class="picTitle">${location[i].Name}</h4>
-                    <span class="picLocation">${location[i].Zone}</span>
-                </div>
+  location.map(function(value) {
+   
+
+    var arr = [];
+    arr.push(value);
+
+    if (value.Website == "") {
+      value.Website = "#";
+    }
+    
+    for (let i = 0; i < arr.length; i++) {
+      thumbnail += `<div class="card thumbnail mb-3">
+                <a href="${
+                  arr[i].Picture1
+                }" data-fancybox="images" data-caption="${
+        arr[i].Name
+      }" class="pic" style="background:url(${arr[i].Picture1})">
+                    <h4 class="picTitle">${arr[i].Name}</h4>
+                    <span class="picLocation">${arr[i].Zone}</span>
+                </a>
                 <div class="caption">
                     <ul class="areaList">
-                        <li class="areaTime">${location[i].Opentime}</li>
-                        <li class="areaLocation">${location[i].Add}</li>
-                        <li class="areaPhone">${location[i].Tel}</li>
+                        <li class="areaTime">${arr[i].Opentime}</li>
+                        <li class="areaLocation">${arr[i].Add}</li>
+                        <li class="areaPhone">${arr[i].Tel}</li>
                     </ul>
                     <div class="tag">
-                        <i class="fa fa-tag" aria-hidden="true"></i>
-                        <span class="areaTag">${location[i].Ticketinfo}</span>
+                    <a href="${arr[i].Website}" target="_blank">相關連結</a>
                     </div>
                 </div>
-        </a>
-            `;
-  }
+        </div>`;
+    }
+  });
   viewBlock.innerHTML = thumbnail;
 }
 
 // 表格
 function drawTable(location, tbody) {
   var tr, td;
-  tbody = document.getElementById(tbody);
 
+  tbody = document.getElementById(tbody);
+  tbody.innerHTML = "";
   for (var i = 0; i < location.length; i++) {
     tr = tbody.insertRow(tbody.rows.length);
     td = tr.insertCell(tr.cells.length);
@@ -105,7 +124,11 @@ function drawTable(location, tbody) {
     td = tr.insertCell(tr.cells.length);
     td.innerHTML = location[i].Add;
     td = tr.insertCell(tr.cells.length);
-    td.innerHTML = `<img src="${location[i].Picture1}" style="width:120px;">`;
+    td.innerHTML = `<a href="${
+      location[i].Picture1
+    }"data-fancybox="images" data-caption="${location[i].Name}">
+    <img src="${location[i].Picture1}" style="width:120px;">
+  </a>`;
     td = tr.insertCell(tr.cells.length);
     td.innerHTML = location[i].Opentime;
   }

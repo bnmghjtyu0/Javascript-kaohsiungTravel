@@ -49,29 +49,31 @@ body {
     }
     main {
         .areaHito {
-            max-width: 800px; // height: 112px;
+            position: fixed !important;
+            margin-left: -250px;
+            margin-top: 0;
+            width: 200px;
             border-radius: $borderRadiusMain;
-            margin: 0 auto;
             box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
             position: relative;
-            top: -20px;
             background: #fff;
-            padding: 20px 26px;
-            h4.title {
+            z-index: 9999;
+            padding-top:20px;
+            h4 {
                 font-size: $fz + 0.1em;
                 font-weight: normal;
                 margin: 0;
                 margin-bottom: 14px;
+                text-align: center;
             }
             .areaHitoList {
                 display: flex;
-                justify-content: flex-start;
                 flex-wrap: wrap;
-                padding: 0 25px;
+                justify-content: center;
                 li {
+                    margin-bottom: 12px;
                     list-style: none;
                     margin-right: 30px;
-                    margin-bottom: 20px;
                     &:nth-of-type(4n + 1) {
                         a {
                             background: $colorPurple;
@@ -106,13 +108,60 @@ body {
                 }
             }
         }
+        $viewTableShadow: inset -2px 0 4px -2px rgba(29, 185, 136, 1);
         .areaBlock {
+            .container {
+                position: relative;
+            }
+            .viewTable {
+                padding-top: 40px;
+                thead {
+                    tr {
+                        th {
+                            //   box-shadow: $viewTableShadow;
+                            background: rgb(47, 185, 167);
+                            border: none;
+                            color: #fff;
+                            position: relative;
+                            border-radius: 0 20px 0 20px;
+                            text-align: center;
+                        }
+                    }
+                }
+                tbody {
+                    tr {
+                        td {
+                            border-top: none;
+                            position: relative;
+                            background: #fff; //   box-shadow: $viewTableShadow;
+                            border-bottom: 1px solid rgb(47, 185, 167);
+                            vertical-align: middle;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
             .areaTitle {
                 text-align: center;
                 font-size: $fz + 1.2em;
                 margin-bottom: 20px;
                 color: $colorPurple;
                 font-weight: normal;
+            }
+            .changeView {
+                position: absolute;
+                top: 0;
+                right: 12px;
+                li {
+                    list-style: none;
+                    display: inline;
+                    a {
+                        text-decoration: none;
+                        i {
+                            font-size: 30px;
+                        }
+                    }
+                }
             }
             .thumbnail {
                 padding: 0;
@@ -128,6 +177,7 @@ body {
                     background-position: center bottom !important;
                     width: 100%;
                     height: 200px;
+                    display: block;
                     .picTitle {
                         position: absolute;
                         left: 1rem;
