@@ -58,7 +58,7 @@ body {
             position: relative;
             background: #fff;
             z-index: 9999;
-            padding-top:20px;
+            padding-top: 20px;
             h4 {
                 font-size: $fz + 0.1em;
                 font-weight: normal;
@@ -125,6 +125,8 @@ body {
                             position: relative;
                             border-radius: 0 20px 0 20px;
                             text-align: center;
+                            box-shadow: 0 0 9px rgba(0, 0, 0, .4);
+                            z-index: 9;
                         }
                     }
                 }

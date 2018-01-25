@@ -85,11 +85,7 @@ function postData(location) {
     
     for (let i = 0; i < arr.length; i++) {
       thumbnail += `<div class="card thumbnail mb-3">
-                <a href="${
-                  arr[i].Picture1
-                }" data-fancybox="images" data-caption="${
-        arr[i].Name
-      }" class="pic" style="background:url(${arr[i].Picture1})">
+                <a href="${arr[i].Picture1}" data-fancybox="images" data-caption="${arr[i].Name}" class="pic" style="background:url(${arr[i].Picture1})">
                     <h4 class="picTitle">${arr[i].Name}</h4>
                     <span class="picLocation">${arr[i].Zone}</span>
                 </a>
