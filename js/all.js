@@ -73,35 +73,33 @@ function listFun(e) {
 // 將符合選擇地區的資訊 post 出來 - 圖文
 function postData(location) {
   var thumbnail = "";
-  location.map(function(value) {
-   
 
-    var arr = [];
-    arr.push(value);
 
-    if (value.Website == "") {
-      value.Website = "#";
+
+  for (let i = 0; i < location.length; i++) {
+    if(location[i].Website.indexOf('http') == 0) {
     }
-    
-    for (let i = 0; i < arr.length; i++) {
-      thumbnail += `<div class="card thumbnail mb-3">
-                <a href="${arr[i].Picture1}" data-fancybox="images" data-caption="${arr[i].Name}" class="pic" style="background:url(${arr[i].Picture1})">
-                    <h4 class="picTitle">${arr[i].Name}</h4>
-                    <span class="picLocation">${arr[i].Zone}</span>
+    thumbnail += `<div class="card thumbnail mb-3">
+                <a href="${
+                  location[i].Picture1
+                }" data-fancybox="images" data-caption="${
+      location[i].Name
+    }" class="pic" style="background:url(${location[i].Picture1})">
+                    <h4 class="picTitle">${location[i].Name}</h4>
+                    <span class="picLocation">${location[i].Zone}</span>
                 </a>
                 <div class="caption">
                     <ul class="areaList">
-                        <li class="areaTime">${arr[i].Opentime}</li>
-                        <li class="areaLocation">${arr[i].Add}</li>
-                        <li class="areaPhone">${arr[i].Tel}</li>
+                        <li class="areaTime">${location[i].Opentime}</li>
+                        <li class="areaLocation">${location[i].Add}</li>
+                        <li class="areaPhone">${location[i].Tel}</li>
                     </ul>
                     <div class="tag">
-                    <a href="${arr[i].Website}" target="_blank">相關連結</a>
+                    <a href="${location[i].Website}" target="_blank">${location[i].Website}</a>
                     </div>
                 </div>
         </div>`;
-    }
-  });
+  }
   viewBlock.innerHTML = thumbnail;
 }
 
