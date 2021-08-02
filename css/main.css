@@ -1,1 +1,416 @@
-﻿html{height:100%;box-sizing:border-box}body{font-size:15px;font-family:"微軟正黑體", Helvetica, sans-serif;background:#f6f7f6;position:relative;min-height:100%;padding-bottom:6%;margin:0}.wrap header{height:380px;width:100%;background:url(https://hexschool.github.io/JavaScript_HomeWork/assets/Hero.png) no-repeat;background-position:center bottom;background-size:cover;display:flex;justify-content:center;align-items:center}.wrap header .container{text-align:center}.wrap header .container h4.title{text-align:center;margin-bottom:120px;font-size:2.7em;color:#fff;font-weight:normal;letter-spacing:.2em}.wrap header .container .select2_basic{max-width:452px;margin:0 auto}.wrap main .areaHito{position:fixed !important;margin-left:-250px;margin-top:0;width:200px;border-radius:5px;box-shadow:0 1px 3px 0 rgba(0,0,0,0.2);position:relative;background:#fff;z-index:9999;padding-top:20px}.wrap main .areaHito h4{font-size:1.1em;font-weight:normal;margin:0;margin-bottom:14px;text-align:center}.wrap main .areaHito .areaHitoList{display:flex;flex-wrap:wrap;justify-content:center}.wrap main .areaHito .areaHitoList li{margin-bottom:12px;list-style:none;margin-right:30px}.wrap main .areaHito .areaHitoList li:nth-of-type(4n+1) a{background:#8a82cc}.wrap main .areaHito .areaHitoList li:nth-of-type(4n+2) a{background:#ffa782}.wrap main .areaHito .areaHitoList li:nth-of-type(4n+3) a{background:#f5d005}.wrap main .areaHito .areaHitoList li:nth-of-type(4n+4) a{background:#559ac8}.wrap main .areaHito .areaHitoList li a{width:130px;height:42px;line-height:42px;text-align:center;border-radius:5px;background:gold;display:block;text-decoration:none;color:#fff}.wrap main .areaBlock .container{position:relative}.wrap main .areaBlock .viewTable{padding-top:40px}.wrap main .areaBlock .viewTable thead tr th{background:#2fb9a7;border:none;color:#fff;position:relative;border-radius:0 20px 0 20px;text-align:center;box-shadow:0 0 9px rgba(0,0,0,0.4);z-index:9}.wrap main .areaBlock .viewTable tbody tr td{border-top:none;position:relative;background:#fff;border-bottom:1px solid #2fb9a7;vertical-align:middle;text-align:center}.wrap main .areaBlock .areaTitle{text-align:center;font-size:2.2em;margin-bottom:20px;color:#8a82cc;font-weight:normal}.wrap main .areaBlock .changeView{position:absolute;top:0;right:12px}.wrap main .areaBlock .changeView li{list-style:none;display:inline}.wrap main .areaBlock .changeView li a{text-decoration:none}.wrap main .areaBlock .changeView li a i{font-size:30px}.wrap main .areaBlock .thumbnail{padding:0;box-shadow:0 0 6px rgba(0,0,0,0.2);border:none;border-radius:0;text-decoration:none}.wrap main .areaBlock .thumbnail .pic{position:relative;background:url(http://khh.travel/FileArtPic.ashx?id=1846&w=1280&h=960);background-size:cover;background-repeat:no-repeat;background-position:center bottom !important;width:100%;height:200px;display:block}.wrap main .areaBlock .thumbnail .pic .picTitle{position:absolute;left:1rem;bottom:1rem;color:#fff;font-size:2em;margin:0;font-weight:normal;text-shadow:0 0 6px rgba(0,0,0,0.6)}.wrap main .areaBlock .thumbnail .pic .picLocation{position:absolute;right:1rem;bottom:1rem;font-size:1.2em;color:#fff;font-weight:normal;text-shadow:0 0 6px rgba(0,0,0,0.6)}.wrap main .areaBlock .thumbnail .caption{position:relative}.wrap main .areaBlock .thumbnail .caption .areaList{margin:0;padding:15px;padding-bottom:30px}.wrap main .areaBlock .thumbnail .caption .areaList li{color:#333;position:relative;list-style:none;font-size:1.2em;padding-left:24px;margin-bottom:6px}.wrap main .areaBlock .thumbnail .caption .areaList li:before{position:absolute;left:0;width:20px;display:flex;justify-content:center}.wrap main .areaBlock .thumbnail .caption .areaList li.areaTime:before{content:"\f017";font-family:FontAwesome;color:#8a82cc;font-size:1.2em;top:-3px}.wrap main .areaBlock .thumbnail .caption .areaList li.areaLocation:before{content:"\f041";font-family:FontAwesome;color:#ffa782;font-size:1.4em;top:-4px}.wrap main .areaBlock .thumbnail .caption .areaList li.areaPhone:before{content:"\f10b";font-family:FontAwesome;color:#559ac8;font-size:1.4em;top:-4px}.wrap main .areaBlock .thumbnail .caption .tag{position:absolute;right:0.6rem;bottom:0.6rem;font-size:1.2em}.wrap main .areaBlock .thumbnail .caption .tag i{color:#f5d005;font-size:1.2em}.wrap footer{position:absolute;right:0;left:0;bottom:0;width:100%;background:lightseagreen;padding:15px 0;text-align:center}.wrap footer a{color:#fff;text-decoration:none}.select2-container--material .selection .select2-selection{background:rgba(255,255,255,0.6);border:3px solid #fff;height:50px;display:flex;align-items:center;border-radius:5px}.select2-container--material .selection .select2-selection .select2-selection__arrow{margin-left:auto;margin-right:6px}.select2-container--material .selection .select2-selection .select2-selection__arrow i{font-size:1.6em}.select2-container--material .select2-dropdown{background:none}.select2-container--material .select2-dropdown .select2-results__options .select2-results__option{padding:5px 12px;background:rgba(255,255,255,0.6)}.select2-container--material .select2-dropdown .select2-results__options .select2-results__option:hover{background:#559ac8;color:#fff}.separate.separate01{width:80%;margin:20px auto;display:flex;align-items:center}.separate.separate01:before,.separate.separate01:after{display:inline-block;flex:1;background-image:linear-gradient(90deg, #fff, #fff, #559ac8, #559ac8);background-size:10px 10px;height:1px}.separate.separate01:before{content:""}.separate.separate01:after{content:""}.separate.separate01 i{width:25px;height:25px;border:2px solid #559ac8;border-radius:50%;color:#559ac8;font-size:1.6em;margin:0 6px;display:flex;align-items:center;justify-content:center}.card-columns{column-count:1}@media (min-width: 480px){.card-columns{column-count:2}}@media (min-width: 768px){.card-columns{column-count:2}}@media (min-width: 992px){.card-columns{column-count:2}}@media (min-width: 1200px){.card-columns{column-count:2}}
+@charset "UTF-8";
+html {
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-size: 15px;
+  font-family: "微軟正黑體", Helvetica, sans-serif;
+  background: #f6f7f6;
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 6%;
+  margin: 0;
+}
+
+.wrap header {
+  height: 380px;
+  width: 100%;
+  background: url(https://hexschool.github.io/JavaScript_HomeWork/assets/Hero.png) no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrap header .container {
+  text-align: center;
+}
+
+.wrap header .container h4.title {
+  text-align: center;
+  margin-bottom: 120px;
+  font-size: 2.7em;
+  color: #fff;
+  font-weight: normal;
+  letter-spacing: 0.2em;
+}
+
+.wrap header .container .select2_basic {
+  max-width: 452px;
+  margin: 0 auto;
+}
+
+.wrap main .areaHito {
+  position: fixed !important;
+  top: 200px;
+  margin-left: -200px;
+  margin-top: 0;
+  width: 200px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+  background: #fff;
+  z-index: 9999;
+  padding-top: 20px;
+}
+
+.wrap main .areaHito h4 {
+  font-size: 1.1em;
+  font-weight: normal;
+  margin: 0;
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.wrap main .areaHito .areaHitoList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.wrap main .areaHito .areaHitoList li {
+  margin-bottom: 12px;
+  list-style: none;
+  margin-right: 30px;
+}
+
+.wrap main .areaHito .areaHitoList li:nth-of-type(4n + 1) a {
+  background: #8a82cc;
+}
+
+.wrap main .areaHito .areaHitoList li:nth-of-type(4n + 2) a {
+  background: #ffa782;
+}
+
+.wrap main .areaHito .areaHitoList li:nth-of-type(4n + 3) a {
+  background: #f5d005;
+}
+
+.wrap main .areaHito .areaHitoList li:nth-of-type(4n + 4) a {
+  background: #559ac8;
+}
+
+.wrap main .areaHito .areaHitoList li a {
+  width: 130px;
+  height: 42px;
+  line-height: 42px;
+  text-align: center;
+  border-radius: 5px;
+  background: gold;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+}
+
+.wrap main .areaBlock .container {
+  position: relative;
+}
+
+.wrap main .areaBlock .viewTable thead tr th {
+  background: #2fb9a7;
+  border: none;
+  color: #fff;
+  position: relative;
+  border-radius: 0 20px 0 20px;
+  text-align: center;
+  -webkit-box-shadow: 0 0 9px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 9px rgba(0, 0, 0, 0.4);
+  z-index: 9;
+}
+
+.wrap main .areaBlock .viewTable tbody tr td {
+  border-top: none;
+  position: relative;
+  background: #fff;
+  border-bottom: 1px solid #2fb9a7;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.wrap main .areaBlock .areaTitle {
+  text-align: center;
+  font-size: 2.2em;
+  margin-bottom: 20px;
+  color: #8a82cc;
+  font-weight: normal;
+}
+
+.wrap main .areaBlock .changeView {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.wrap main .areaBlock .changeView button {
+  font-size: 26px;
+  background-color: #f6f7f6;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  color: #559ac8;
+}
+
+.wrap main .areaBlock .thumbnail {
+  padding: 0;
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 0;
+  text-decoration: none;
+}
+
+.wrap main .areaBlock .thumbnail .pic {
+  position: relative;
+  background: url(http://khh.travel/FileArtPic.ashx?id=1846&w=1280&h=960);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom !important;
+  width: 100%;
+  height: 200px;
+  display: block;
+}
+
+.wrap main .areaBlock .thumbnail .pic .picTitle {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  color: #fff;
+  font-size: 2em;
+  margin: 0;
+  font-weight: normal;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+}
+
+.wrap main .areaBlock .thumbnail .pic .picLocation {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  font-size: 1.2em;
+  color: #fff;
+  font-weight: normal;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+}
+
+.wrap main .areaBlock .thumbnail .caption {
+  position: relative;
+}
+
+.wrap main .areaBlock .thumbnail .caption .areaList {
+  margin: 0;
+  padding: 15px;
+  padding-bottom: 30px;
+}
+
+.wrap main .areaBlock .thumbnail .caption .areaList li {
+  color: #333;
+  position: relative;
+  list-style: none;
+  font-size: 1.2em;
+  padding-left: 24px;
+  margin-bottom: 6px;
+}
+
+.wrap main .areaBlock .thumbnail .caption .areaList li:before {
+  position: absolute;
+  left: 0;
+  width: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.wrap main .areaBlock .thumbnail .caption .areaList li.areaTime:before {
+  content: "\f017";
+  font-family: FontAwesome;
+  color: #8a82cc;
+  font-size: 1.2em;
+  top: -3px;
+}
+
+.wrap main .areaBlock .thumbnail .caption .areaList li.areaLocation:before {
+  content: "\f041";
+  font-family: FontAwesome;
+  color: #ffa782;
+  font-size: 1.4em;
+  top: -4px;
+}
+
+.wrap main .areaBlock .thumbnail .caption .areaList li.areaPhone:before {
+  content: "\f10b";
+  font-family: FontAwesome;
+  color: #559ac8;
+  font-size: 1.4em;
+  top: -4px;
+}
+
+.wrap main .areaBlock .thumbnail .caption .tag {
+  position: absolute;
+  right: 0.6rem;
+  bottom: 0.6rem;
+  font-size: 1.2em;
+}
+
+.wrap main .areaBlock .thumbnail .caption .tag i {
+  color: #f5d005;
+  font-size: 1.2em;
+}
+
+.wrap footer {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: lightseagreen;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.wrap footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.select2-container--material .selection .select2-selection {
+  background: rgba(255, 255, 255, 0.6);
+  border: 3px solid #fff;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+}
+
+.select2-container--material .selection .select2-selection .select2-selection__arrow {
+  margin-left: auto;
+  margin-right: 6px;
+}
+
+.select2-container--material .selection .select2-selection .select2-selection__arrow i {
+  font-size: 1.6em;
+}
+
+.select2-container--material .select2-dropdown {
+  background: none;
+}
+
+.select2-container--material .select2-dropdown .select2-results__options .select2-results__option {
+  padding: 5px 12px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.select2-container--material .select2-dropdown .select2-results__options .select2-results__option:hover {
+  background: #559ac8;
+  color: #fff;
+}
+
+.separate.separate01 {
+  width: 80%;
+  margin: 20px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.separate.separate01:before, .separate.separate01:after {
+  display: inline-block;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-image: -webkit-gradient(linear, left top, right top, from(#fff), color-stop(#fff), color-stop(#559ac8), to(#559ac8));
+  background-image: linear-gradient(90deg, #fff, #fff, #559ac8, #559ac8);
+  background-size: 10px 10px;
+  height: 1px;
+}
+
+.separate.separate01:before {
+  content: "";
+}
+
+.separate.separate01:after {
+  content: "";
+}
+
+.separate.separate01 i {
+  width: 25px;
+  height: 25px;
+  border: 2px solid #559ac8;
+  border-radius: 50%;
+  color: #559ac8;
+  font-size: 1.6em;
+  margin: 0 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+.card-columns {
+  -webkit-column-count: 1;
+          column-count: 1;
+}
+
+@media (min-width: 480px) {
+  .card-columns {
+    -webkit-column-count: 2;
+            column-count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-columns {
+    -webkit-column-count: 2;
+            column-count: 2;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .card-columns {
+    -webkit-column-count: 2;
+            column-count: 2;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .card-columns {
+    -webkit-column-count: 2;
+            column-count: 2;
+  }
+}
+/*# sourceMappingURL=main.css.map */

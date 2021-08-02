@@ -6,348 +6,352 @@ $colorYellow: rgba(245, 208, 5, 1);
 $colorBlue: rgba(85, 154, 200, 1);
 // --------------------------------------------------------------------------
 html {
-    height: 100%;
-    box-sizing: border-box;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 body {
-    font-size: 15px;
-    font-family: "微軟正黑體", Helvetica, sans-serif;
-    background: rgb(246, 247, 246);
-    position: relative;
-    min-height: 100%;
-    padding-bottom: 6%;
-    margin: 0;
+  font-size: 15px;
+  font-family: "微軟正黑體", Helvetica, sans-serif;
+  background: rgb(246, 247, 246);
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 6%;
+  margin: 0;
 }
 
 .wrap {
-    // header
-    header {
-        height: 380px;
-        width: 100%;
-        background: url(https://hexschool.github.io/JavaScript_HomeWork/assets/Hero.png) no-repeat;
-        background-position: center bottom;
-        background-size: cover;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .container {
-            text-align: center;
-            h4.title {
-                text-align: center;
-                margin-bottom: 120px;
-                font-size: $fz + 1.7em;
-                color: #fff;
-                font-weight: normal;
-                letter-spacing: $fz - 0.8em;
-            }
-            .select2_basic {
-                max-width: 452px;
-                margin: 0 auto;
-            }
-        }
-    }
-    main {
-        .areaHito {
-            position: fixed !important;
-            margin-left: -250px;
-            margin-top: 0;
-            width: 200px;
-            border-radius: $borderRadiusMain;
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
-            position: relative;
-            background: #fff;
-            z-index: 9999;
-            padding-top: 20px;
-            h4 {
-                font-size: $fz + 0.1em;
-                font-weight: normal;
-                margin: 0;
-                margin-bottom: 14px;
-                text-align: center;
-            }
-            .areaHitoList {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                li {
-                    margin-bottom: 12px;
-                    list-style: none;
-                    margin-right: 30px;
-                    &:nth-of-type(4n + 1) {
-                        a {
-                            background: $colorPurple;
-                        }
-                    }
-                    &:nth-of-type(4n + 2) {
-                        a {
-                            background: $colorOrange;
-                        }
-                    }
-                    &:nth-of-type(4n + 3) {
-                        a {
-                            background: $colorYellow;
-                        }
-                    }
-                    &:nth-of-type(4n + 4) {
-                        a {
-                            background: $colorBlue;
-                        }
-                    }
-                    a {
-                        width: 130px;
-                        height: 42px;
-                        line-height: 42px;
-                        text-align: center;
-                        border-radius: $borderRadiusMain;
-                        background: gold;
-                        display: block;
-                        text-decoration: none;
-                        color: #fff;
-                    }
-                }
-            }
-        }
-        $viewTableShadow: inset -2px 0 4px -2px rgba(29, 185, 136, 1);
-        .areaBlock {
-            .container {
-                position: relative;
-            }
-            .viewTable {
-                padding-top: 40px;
-                thead {
-                    tr {
-                        th {
-                            //   box-shadow: $viewTableShadow;
-                            background: rgb(47, 185, 167);
-                            border: none;
-                            color: #fff;
-                            position: relative;
-                            border-radius: 0 20px 0 20px;
-                            text-align: center;
-                            box-shadow: 0 0 9px rgba(0, 0, 0, .4);
-                            z-index: 9;
-                        }
-                    }
-                }
-                tbody {
-                    tr {
-                        td {
-                            border-top: none;
-                            position: relative;
-                            background: #fff; //   box-shadow: $viewTableShadow;
-                            border-bottom: 1px solid rgb(47, 185, 167);
-                            vertical-align: middle;
-                            text-align: center;
-                        }
-                    }
-                }
-            }
-            .areaTitle {
-                text-align: center;
-                font-size: $fz + 1.2em;
-                margin-bottom: 20px;
-                color: $colorPurple;
-                font-weight: normal;
-            }
-            .changeView {
-                position: absolute;
-                top: 0;
-                right: 12px;
-                li {
-                    list-style: none;
-                    display: inline;
-                    a {
-                        text-decoration: none;
-                        i {
-                            font-size: 30px;
-                        }
-                    }
-                }
-            }
-            .thumbnail {
-                padding: 0;
-                box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-                border: none;
-                border-radius: 0;
-                text-decoration: none;
-                .pic {
-                    position: relative;
-                    background: url(http://khh.travel/FileArtPic.ashx?id=1846&w=1280&h=960);
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                    background-position: center bottom !important;
-                    width: 100%;
-                    height: 200px;
-                    display: block;
-                    .picTitle {
-                        position: absolute;
-                        left: 1rem;
-                        bottom: 1rem;
-                        color: #fff;
-                        font-size: $fz + 1em;
-                        margin: 0;
-                        font-weight: normal;
-                        text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
-                    }
-                    .picLocation {
-                        position: absolute;
-                        right: 1rem;
-                        bottom: 1rem;
-                        font-size: $fz + 0.2em;
-                        color: #fff;
-                        font-weight: normal;
-                        text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
-                    }
-                }
-                .caption {
-                    position: relative;
-                    .areaList {
-                        margin: 0; // padding-left: 1rem - 0.6rem;
-                        padding: 15px;
-                        padding-bottom: 30px;
-                        li {
-                            color: #333;
-                            position: relative;
-                            list-style: none;
-                            font-size: $fz + 0.2em;
-                            padding-left: 24px;
-                            margin-bottom: 6px;
-                            &:before {
-                                position: absolute;
-                                left: 0;
-                                width: 20px;
-                                display: flex;
-                                justify-content: center;
-                            }
-                            &.areaTime {
-                                &:before {
-                                    content: "\f017";
-                                    font-family: FontAwesome;
-                                    color: $colorPurple;
-                                    font-size: $fz + 0.2em;
-                                    top: -3px;
-                                }
-                            }
-                            &.areaLocation {
-                                &:before {
-                                    content: "\f041";
-                                    font-family: FontAwesome;
-                                    color: $colorOrange;
-                                    font-size: $fz + 0.4em;
-                                    top: -4px;
-                                }
-                            }
-                            &.areaPhone {
-                                &:before {
-                                    content: "\f10b";
-                                    font-family: FontAwesome;
-                                    color: $colorBlue;
-                                    font-size: $fz + 0.4em;
-                                    top: -4px;
-                                }
-                            }
-                        }
-                    }
-                    .tag {
-                        position: absolute;
-                        right: 0.6rem;
-                        bottom: 0.6rem;
-                        font-size: $fz + 0.2em;
-                        i {
-                            color: $colorYellow;
-                            font-size: $fz + 0.2em;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    footer {
-        position: absolute;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        background: lightseagreen;
-        padding: 15px 0;
+  // header
+  header {
+    height: 380px;
+    width: 100%;
+    background: url(https://hexschool.github.io/JavaScript_HomeWork/assets/Hero.png)
+      no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .container {
+      text-align: center;
+      h4.title {
         text-align: center;
-        a {
-            color: #fff;
-            text-decoration: none;
-        }
+        margin-bottom: 120px;
+        font-size: $fz + 1.7em;
+        color: #fff;
+        font-weight: normal;
+        letter-spacing: $fz - 0.8em;
+      }
+      .select2_basic {
+        max-width: 452px;
+        margin: 0 auto;
+      }
     }
+  }
+  main {
+    .areaHito {
+      position: fixed !important;
+      top: 200px;
+      margin-left: -200px;
+      margin-top: 0;
+      width: 200px;
+      border-radius: $borderRadiusMain;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+      position: relative;
+      background: #fff;
+      z-index: 9999;
+      padding-top: 20px;
+      h4 {
+        font-size: $fz + 0.1em;
+        font-weight: normal;
+        margin: 0;
+        margin-bottom: 14px;
+        text-align: center;
+      }
+      .areaHitoList {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        li {
+          margin-bottom: 12px;
+          list-style: none;
+          margin-right: 30px;
+          &:nth-of-type(4n + 1) {
+            a {
+              background: $colorPurple;
+            }
+          }
+          &:nth-of-type(4n + 2) {
+            a {
+              background: $colorOrange;
+            }
+          }
+          &:nth-of-type(4n + 3) {
+            a {
+              background: $colorYellow;
+            }
+          }
+          &:nth-of-type(4n + 4) {
+            a {
+              background: $colorBlue;
+            }
+          }
+          a {
+            width: 130px;
+            height: 42px;
+            line-height: 42px;
+            text-align: center;
+            border-radius: $borderRadiusMain;
+            background: gold;
+            display: block;
+            text-decoration: none;
+            color: #fff;
+          }
+        }
+      }
+    }
+    $viewTableShadow: inset -2px 0 4px -2px rgba(29, 185, 136, 1);
+    .areaBlock {
+      .container {
+        position: relative;
+      }
+      .viewTable {
+        thead {
+          tr {
+            th {
+              //   box-shadow: $viewTableShadow;
+              background: rgb(47, 185, 167);
+              border: none;
+              color: #fff;
+              position: relative;
+              border-radius: 0 20px 0 20px;
+              text-align: center;
+              box-shadow: 0 0 9px rgba(0, 0, 0, 0.4);
+              z-index: 9;
+            }
+          }
+        }
+        tbody {
+          tr {
+            td {
+              border-top: none;
+              position: relative;
+              background: #fff; //   box-shadow: $viewTableShadow;
+              border-bottom: 1px solid rgb(47, 185, 167);
+              vertical-align: middle;
+              text-align: center;
+            }
+          }
+        }
+      }
+      .areaTitle {
+        text-align: center;
+        font-size: $fz + 1.2em;
+        margin-bottom: 20px;
+        color: $colorPurple;
+        font-weight: normal;
+      }
+      .changeView {
+        display: flex;
+        justify-content: flex-end;
+        button {
+          font-size: 26px;
+          background-color: rgb(246, 247, 246);
+          border: none;
+          cursor: pointer;
+          outline: none;
+          color:$colorBlue;
+        }
+      }
+      .thumbnail {
+        padding: 0;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+        border: none;
+        border-radius: 0;
+        text-decoration: none;
+        .pic {
+          position: relative;
+          background: url(http://khh.travel/FileArtPic.ashx?id=1846&w=1280&h=960);
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center bottom !important;
+          width: 100%;
+          height: 200px;
+          display: block;
+          .picTitle {
+            position: absolute;
+            left: 1rem;
+            bottom: 1rem;
+            color: #fff;
+            font-size: $fz + 1em;
+            margin: 0;
+            font-weight: normal;
+            text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+          }
+          .picLocation {
+            position: absolute;
+            right: 1rem;
+            bottom: 1rem;
+            font-size: $fz + 0.2em;
+            color: #fff;
+            font-weight: normal;
+            text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+          }
+        }
+        .caption {
+          position: relative;
+          .areaList {
+            margin: 0; // padding-left: 1rem - 0.6rem;
+            padding: 15px;
+            padding-bottom: 30px;
+            li {
+              color: #333;
+              position: relative;
+              list-style: none;
+              font-size: $fz + 0.2em;
+              padding-left: 24px;
+              margin-bottom: 6px;
+              &:before {
+                position: absolute;
+                left: 0;
+                width: 20px;
+                display: flex;
+                justify-content: center;
+              }
+              &.areaTime {
+                &:before {
+                  content: "\f017";
+                  font-family: FontAwesome;
+                  color: $colorPurple;
+                  font-size: $fz + 0.2em;
+                  top: -3px;
+                }
+              }
+              &.areaLocation {
+                &:before {
+                  content: "\f041";
+                  font-family: FontAwesome;
+                  color: $colorOrange;
+                  font-size: $fz + 0.4em;
+                  top: -4px;
+                }
+              }
+              &.areaPhone {
+                &:before {
+                  content: "\f10b";
+                  font-family: FontAwesome;
+                  color: $colorBlue;
+                  font-size: $fz + 0.4em;
+                  top: -4px;
+                }
+              }
+            }
+          }
+          .tag {
+            position: absolute;
+            right: 0.6rem;
+            bottom: 0.6rem;
+            font-size: $fz + 0.2em;
+            i {
+              color: $colorYellow;
+              font-size: $fz + 0.2em;
+            }
+          }
+        }
+      }
+    }
+  }
+  footer {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: lightseagreen;
+    padding: 15px 0;
+    text-align: center;
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
 }
 
 // component
 // select2
 .select2-container--material {
-    .selection {
-        .select2-selection {
-            background: rgba(255, 255, 255, 0.6);
-            border: 3px solid #fff;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            border-radius: $borderRadiusMain;
-            .select2-selection__arrow {
-                margin-left: auto;
-                margin-right: 6px;
-                i {
-                    font-size: $fz + 0.6em;
-                }
-            }
+  .selection {
+    .select2-selection {
+      background: rgba(255, 255, 255, 0.6);
+      border: 3px solid #fff;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      border-radius: $borderRadiusMain;
+      .select2-selection__arrow {
+        margin-left: auto;
+        margin-right: 6px;
+        i {
+          font-size: $fz + 0.6em;
         }
-    } // 打開option
-    .select2-dropdown {
-        background: none;
-        .select2-results__options {
-            .select2-results__option {
-                padding: 5px 12px;
-                background: rgba(255, 255, 255, 0.6);
-                &:hover {
-                    background: $colorBlue;
-                    color: #fff;
-                }
-            }
-        }
+      }
     }
+  } // 打開option
+  .select2-dropdown {
+    background: none;
+    .select2-results__options {
+      .select2-results__option {
+        padding: 5px 12px;
+        background: rgba(255, 255, 255, 0.6);
+        &:hover {
+          background: $colorBlue;
+          color: #fff;
+        }
+      }
+    }
+  }
 }
 
 // separate
 .separate {
-    &.separate01 {
-        width: 80%;
-        margin: 20px auto;
-        display: flex;
-        align-items: center;
-        &:before,
-        &:after {
-            display: inline-block;
-            flex: 1;
-            background-image: linear-gradient( 90deg, #fff, #fff, $colorBlue, $colorBlue);
-            background-size: 10px 10px;
-            height: 1px;
-        }
-        &:before {
-            content: "";
-        }
-        &:after {
-            content: "";
-        }
-        i {
-            width: 25px;
-            height: 25px;
-            border: 2px solid $colorBlue;
-            border-radius: 50%;
-            color: $colorBlue;
-            font-size: $fz + 0.6em;
-            margin: 0 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+  &.separate01 {
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    &:before,
+    &:after {
+      display: inline-block;
+      flex: 1;
+      background-image: linear-gradient(
+        90deg,
+        #fff,
+        #fff,
+        $colorBlue,
+        $colorBlue
+      );
+      background-size: 10px 10px;
+      height: 1px;
     }
+    &:before {
+      content: "";
+    }
+    &:after {
+      content: "";
+    }
+    i {
+      width: 25px;
+      height: 25px;
+      border: 2px solid $colorBlue;
+      border-radius: 50%;
+      color: $colorBlue;
+      font-size: $fz + 0.6em;
+      margin: 0 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }
 
 // 瀑布流
@@ -355,35 +359,33 @@ body {
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
 
 .card-columns {
-    column-count: 1;
+  column-count: 1;
 }
 
 @media (min-width: 480px) {
-    .card-columns {
-        column-count: 2;
-    }
+  .card-columns {
+    column-count: 2;
+  }
 }
 
 @media (min-width: 768px) {
-    .card-columns {
-        column-count: 2;
-    }
+  .card-columns {
+    column-count: 2;
+  }
 }
-
 
 /* Large devices (desktops, 992px and up) */
 
 @media (min-width: 992px) {
-    .card-columns {
-        column-count: 2;
-    }
+  .card-columns {
+    column-count: 2;
+  }
 }
-
 
 /* Extra large devices (large desktops, 1200px and up) */
 
 @media (min-width: 1200px) {
-    .card-columns {
-        column-count: 2;
-    }
+  .card-columns {
+    column-count: 2;
+  }
 }
