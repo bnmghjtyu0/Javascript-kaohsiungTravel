@@ -1,4 +1,45 @@
 let _data;
+let zones = [
+  "全部地區",
+  "前金",
+  "新興",
+  "鹽埕",
+  "左營",
+  "楠梓",
+  "鼓山",
+  "旗津",
+  "苓雅",
+  "三民",
+  "前鎮",
+  "小港",
+  "鳳山",
+  "鳥松",
+  "大社",
+  "仁武",
+  "大樹",
+  "岡山",
+  "燕巢",
+  "梓官",
+  "永安",
+  "彌陀",
+  "橋頭",
+  "田寮",
+  "茄萣",
+  "阿蓮",
+  "路竹",
+  "湖內",
+  "那瑪夏",
+  "桃源",
+  "茂林",
+  "六龜",
+  "美濃",
+  "旗山",
+  "甲仙",
+  "內門",
+  "杉林",
+  "林園",
+  "大寮",
+];
 // API
 // var xhr = new XMLHttpRequest();
 // xhr.open(
@@ -10,7 +51,7 @@ let _data;
 // xhr.onload = function () {
 //   _data = JSON.parseCSVtoJSON(xhr.responseText);
 //   renderOptions();
-//   renderList();
+//   renderGrid();
 // };
 
 // mock data
@@ -40,7 +81,7 @@ let gridType = "table";
   title.textContent = currentArea;
   renderOptions(_data);
   renderTable(arraySet, "matchData");
-  renderList(arraySet, currentArea);
+  renderGrid(arraySet, currentArea);
   handleChangeType(gridType);
 })();
 
@@ -66,7 +107,7 @@ function handleChangeType(type) {
 function handleTravelSelectChange(e) {
   var selectedArea = e.target.value;
   var arraySet = filterAreas(selectedArea);
-  renderList(arraySet, selectedArea);
+  renderGrid(arraySet, selectedArea);
   renderTable(arraySet, "matchData");
   title.textContent = selectedArea;
 }
@@ -78,7 +119,7 @@ function handleAutoHitoList(e) {
   }
   var area = e.target.textContent;
   var arraySet = filterAreas(area);
-  renderList(arraySet, area);
+  renderGrid(arraySet, area);
   renderTable(arraySet, "matchData");
   title.textContent = area;
 }
@@ -112,13 +153,22 @@ function parseCSVtoJSON(arr) {
 }
 
 // 清單
-function renderList(location, area) {
+function renderGrid(location, area) {
+  let currentArea = "";
+
   var thumbnail = "";
   for (let i = 0; i < location.length; i++) {
+    // for (let j = 0; j < zones.length; j++) {
+    //   console.log(zones[j]);
+    //   if (location[i].Add.indexOf(zones[j]) > -1) {
+    //     currentArea = zones[j];
+    //   }
+    // }
+
     thumbnail += `<div class="card thumbnail mb-3">
                     <a href="${location[i].Picture1}" data-fancybox="images" data-caption="${location[i].Name}" class="pic" style="background:url(${location[i].Picture1})">
                       <h4 class="picTitle">${location[i].Name}</h4>
-                      <span class="picLocation">${area}</span>
+                     <!-- <span class="picLocation">${currentArea}</span> -->
                     </a>
                     <div class="caption">
                       <ul class="areaList">
@@ -143,8 +193,8 @@ function renderTable(location, tbody) {
   tbody.innerHTML = "";
   for (var i = 0; i < location.length; i++) {
     tr = tbody.insertRow(tbody.rows.length);
-    td = tr.insertCell(tr.cells.length);
-    td.innerHTML = location[i].Zone;
+    // td = tr.insertCell(tr.cells.length);
+    // td.innerHTML = location[i].Zone;
     td = tr.insertCell(tr.cells.length);
     td.innerHTML = location[i].Name;
     td = tr.insertCell(tr.cells.length);
@@ -161,55 +211,14 @@ function renderTable(location, tbody) {
 function renderOptions(_data) {
   arrayA = [..._data];
   // 先將Zone印出
-  let zone = [
-    "全部地區",
-    "前金",
-    "新興",
-    "鹽埕",
-    "左營",
-    "楠梓",
-    "鼓山",
-    "旗津",
-    "苓雅",
-    "三民",
-    "前鎮",
-    "小港",
-    "鳳山",
-    "鳥松",
-    "大社",
-    "仁武",
-    "大樹",
-    "岡山",
-    "燕巢",
-    "梓官",
-    "永安",
-    "彌陀",
-    "橋頭",
-    "田寮",
-    "茄萣",
-    "阿蓮",
-    "路竹",
-    "湖內",
-    "那瑪夏",
-    "桃源",
-    "茂林",
-    "六龜",
-    "美濃",
-    "旗山",
-    "甲仙",
-    "內門",
-    "杉林",
-    "林園",
-    "大寮",
-  ];
 
   // 將過濾的 zone 回傳到DOM ============================================================================
   select = "";
   list = "";
 
-  for (var i = 0; zone.length > i; i++) {
+  for (var i = 0; zones.length > i; i++) {
     list += `<li><a href="#">${_data[i].Add}</a></li>`;
-    select += `<option>${zone[i]}</option>`;
+    select += `<option>${zones[i]}</option>`;
     onSelect.innerHTML = select;
   }
   return arrayA;
