@@ -1,4 +1,90 @@
 @charset "UTF-8";
+.table-tr-green {
+  background-color: #2fb9a7;
+}
+
+.table-tr-green .table-th {
+  color: #fff;
+}
+
+.table-rwd {
+  background-color: #fff;
+  width: 100%;
+  display: table;
+  border-collapse: collapse;
+  -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.13);
+          box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.13);
+  border-spacing: 2px;
+}
+
+.table-tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-bottom: 1px solid #eaebef;
+}
+
+.table-th,
+.table-td {
+  display: table-cell;
+  padding: 12px;
+  text-align: center;
+}
+
+.table-head {
+  display: table-header-group;
+}
+
+.table-body {
+  display: table-row-group;
+}
+
+.td-rwd-content {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .table-rwd {
+    background-color: initial;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .table-rwd .table-head {
+    display: none;
+  }
+  .table-rwd .table-body {
+    display: block;
+  }
+  .table-rwd .table-tr {
+    display: block;
+    margin-bottom: 20px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.13);
+            box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.13);
+  }
+  .table-rwd .td-rwd {
+    left: 10px;
+    position: absolute;
+    display: block;
+  }
+  .table-rwd .td-rwd-content {
+    display: block;
+  }
+  .table-rwd .table-td {
+    position: relative;
+    display: block;
+    border-bottom: 1px solid #eaebef;
+    padding-left: 50%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: right;
+  }
+  .table-rwd .table-td:before {
+    content: attr(data-label);
+    left: 10px;
+    position: absolute;
+  }
+}
+
 html {
   height: 100%;
   -webkit-box-sizing: border-box;

@@ -1,0 +1,84 @@
+$green: rgb(47, 185, 167);
+.table-tr-green {
+  background-color: $green;
+  .table-th {
+    color: #fff;
+  }
+}
+.table-rwd {
+  //填色: 加了這裡
+  background-color: #fff;
+  width: 100%;
+  display: table;
+  //填色: 加了這裡
+  border-collapse: collapse;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.13);
+  border-spacing: 2px;
+}
+.table-tr {
+  display: table-row;
+  vertical-align: inherit;
+  //填色: 加了這裡
+  border-bottom: 1px solid rgba(234, 235, 239, 1);
+}
+
+.table-th,
+.table-td {
+  display: table-cell;
+  padding: 12px;
+  text-align: center;
+}
+.table-head {
+  display: table-header-group;
+}
+.table-body {
+  display: table-row-group;
+}
+
+.td-rwd-content {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .table-rwd {
+    //填色: 加了這裡
+    background-color: initial;
+    box-shadow: none;
+    .table-head {
+      display: none;
+    }
+    .table-body {
+      display: block;
+    }
+    .table-tr {
+      display: block;
+      margin-bottom: 20px;
+      //填色: 加了這裡
+      background-color: #fff;
+      box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.13);
+    }
+    .td-rwd {
+      left: 10px;
+      position: absolute;
+      display: block;
+    }
+    .td-rwd-content {
+      display: block;
+    }
+    .table-td {
+      position: relative;
+      display: block;
+      //填色: 加了這裡
+      border-bottom: 1px solid rgba(234, 235, 239, 1);
+      padding-left: 50%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      text-align: right;
+      &:before {
+        content: attr(data-label);
+        left: 10px;
+        position: absolute;
+      }
+    }
+  }
+}

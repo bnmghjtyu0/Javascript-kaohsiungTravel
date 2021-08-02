@@ -16,7 +16,7 @@ let gridType = "table";
   var arraySet = filterAreas(currentArea);
   title.textContent = currentArea;
   renderOptions(_data);
-  renderTable(arraySet, "matchData");
+  renderTableRwd(arraySet, "matchData");
   renderGrid(arraySet, currentArea);
   handleChangeType(gridType);
 })();
@@ -40,7 +40,7 @@ function handleTravelSelectChange(e) {
   var selectedArea = e.target.value;
   var arraySet = filterAreas(selectedArea);
   renderGrid(arraySet, selectedArea);
-  renderTable(arraySet, "matchData");
+  renderTableRwd(arraySet, "matchData");
   title.textContent = selectedArea;
 }
 function handleAutoHitoList(e) {
@@ -51,7 +51,7 @@ function handleAutoHitoList(e) {
   var area = e.target.textContent;
   var arraySet = filterAreas(area);
   renderGrid(arraySet, area);
-  renderTable(arraySet, "matchData");
+  renderTableRwd(arraySet, "matchData");
   title.textContent = area;
 }
 function filterAreas(area) {
@@ -102,22 +102,36 @@ function renderGrid(location, area) {
   }
   viewBlock.innerHTML = thumbnail;
 }
-function renderTable(location, tbody) {
-  var tr, td;
-  tbody = document.getElementById(tbody);
-  tbody.innerHTML = "";
+function renderTableRwd(location, tbody) {
+  let div = document.getElementById(tbody);
+  div.innerHTML = "";
   for (var i = 0; i < location.length; i++) {
-    tr = tbody.insertRow(tbody.rows.length);
-    td = tr.insertCell(tr.cells.length);
-    td.innerHTML = location[i].Name;
-    td = tr.insertCell(tr.cells.length);
-    td.innerHTML = location[i].Add;
-    td = tr.insertCell(tr.cells.length);
-    td.innerHTML = `<a href="${location[i].Picture1}"data-fancybox="images" data-caption="${location[i].Name}">
-  <img src="${location[i].Picture1}" style="width:120px;">
-</a>`;
-    td = tr.insertCell(tr.cells.length);
-    td.innerHTML = location[i].Changetime;
+    let tr = document.createElement("div");
+    tr.classList.add("table-tr");
+    for (let j = 0; j < 4; j++) {
+      let td = document.createElement("div");
+      td.classList.add("table-td");
+      if (j === 0) {
+        td.textContent = location[i].Name;
+        td.setAttribute("data-label", "\u540D\u7A31");
+      }
+      if (j === 1) {
+        td.textContent = location[i].Add;
+        td.setAttribute("data-label", "\u5730\u5740");
+      }
+      if (j === 2) {
+        td.innerHTML = `<a href="${location[i].Picture1}"data-fancybox="images" data-caption="${location[i].Name}">
+           <img src="${location[i].Picture1}" style="width:120px;">
+         </a>`;
+        td.setAttribute("data-label", "\u5716\u7247");
+      }
+      if (j === 3) {
+        td.innerHTML = location[i].Changetime;
+        td.setAttribute("data-label", "\u6642\u9593");
+      }
+      tr.appendChild(td);
+    }
+    div.appendChild(tr);
   }
 }
 function renderOptions(_data2) {
