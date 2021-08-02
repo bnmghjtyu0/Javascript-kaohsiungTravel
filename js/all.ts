@@ -1,6 +1,26 @@
 let _data;
 import { zones } from "./constant.mjs";
-const response = fetch("./khh0720.csv").then((response2) => response2.text()).then((v) => Papa.parse(v)).catch((err) => console.log(err));
+// API
+// var xhr = new XMLHttpRequest();
+// xhr.open(
+//   "get",
+//   "https://data.kcg.gov.tw/api/action/datastore_search?resource_id=7720efce-a21b-466d-98bd-bfd3b24d7274",
+//   true
+// );
+// xhr.send(null);
+// xhr.onload = function () {
+//   _data = JSON.parseCSVtoJSON(xhr.responseText);
+//   renderOptions();
+//   renderGrid();
+// };
+
+// mock data
+const response = fetch("./khh0720.csv")
+  .then((response) => response.text())
+  .then((v) => Papa.parse(v))
+  .catch((err) => console.log(err));
+
+// get elements
 var onAreaHitoList = document.querySelector(".areaHitoList");
 var onSelect = document.querySelector(".selectTravel");
 var viewBlock = document.querySelector(".viewBlock");
@@ -8,8 +28,12 @@ var viewTable = document.querySelector(".viewTable");
 var title = document.querySelector(".areaTitle");
 var onGrid = document.querySelector("#typeGrid");
 var onTable = document.querySelector("#typeTable");
-let currentArea = "\u5168\u90E8\u5730\u5340";
+
+// 設定初始值 initial state
+let currentArea = "全部地區";
 let gridType = "table";
+
+// first load
 (async () => {
   const mockData = await response.then((v) => parseCSVtoJSON(v.data));
   _data = [...mockData];
@@ -20,10 +44,13 @@ let gridType = "table";
   renderGrid(arraySet, currentArea);
   handleChangeType(gridType);
 })();
+
+//事件
 onSelect.addEventListener("change", handleTravelSelectChange, false);
 onAreaHitoList.addEventListener("click", handleAutoHitoList, false);
 onTable.addEventListener("click", () => handleChangeType("table"));
 onGrid.addEventListener("click", () => handleChangeType("grid"));
+
 function handleChangeType(type) {
   if (type === "grid") {
     gridType = "grid";
@@ -36,6 +63,7 @@ function handleChangeType(type) {
     viewTable.style.display = "block";
   }
 }
+// 選擇select觸發
 function handleTravelSelectChange(e) {
   var selectedArea = e.target.value;
   var arraySet = filterAreas(selectedArea);
@@ -43,6 +71,7 @@ function handleTravelSelectChange(e) {
   renderTable(arraySet, "matchData");
   title.textContent = selectedArea;
 }
+// 點擊按鈕觸發
 function handleAutoHitoList(e) {
   e.preventDefault();
   if (e.target.nodeName !== "A") {
@@ -54,10 +83,12 @@ function handleAutoHitoList(e) {
   renderTable(arraySet, "matchData");
   title.textContent = area;
 }
+
+// 從 alldata 裡面去找尋地區跟 string 相同的資料並回傳
 function filterAreas(area) {
   var result = [];
   var data = [..._data];
-  if (area === "\u5168\u90E8\u5730\u5340") {
+  if (area === "全部地區") {
     return data;
   }
   for (var i = 0; i < data.length; i++) {
@@ -68,24 +99,36 @@ function filterAreas(area) {
   }
   return result;
 }
+
+// load csv
 function parseCSVtoJSON(arr) {
   const [headings, ...data] = arr;
-  return data.reduce((acc, data2, i) => {
+  return data.reduce((acc, data, i) => {
     const obj = {};
     for (const [index, heading] of headings.entries()) {
-      obj[heading] = data2[index];
+      obj[heading] = data[index];
     }
     return [...acc, obj];
   }, []);
 }
+
+// 清單
 function renderGrid(location, area) {
-  let currentArea2 = "";
+  let currentArea = "";
+
   var thumbnail = "";
   for (let i = 0; i < location.length; i++) {
+    // for (let j = 0; j < zones.length; j++) {
+    //   console.log(zones[j]);
+    //   if (location[i].Add.indexOf(zones[j]) > -1) {
+    //     currentArea = zones[j];
+    //   }
+    // }
+
     thumbnail += `<div class="card thumbnail mb-3">
                     <a href="${location[i].Picture1}" data-fancybox="images" data-caption="${location[i].Name}" class="pic" style="background:url(${location[i].Picture1})">
                       <h4 class="picTitle">${location[i].Name}</h4>
-                     <!-- <span class="picLocation">${currentArea2}</span> -->
+                     <!-- <span class="picLocation">${currentArea}</span> -->
                     </a>
                     <div class="caption">
                       <ul class="areaList">
@@ -102,12 +145,16 @@ function renderGrid(location, area) {
   }
   viewBlock.innerHTML = thumbnail;
 }
+
+// 表格
 function renderTable(location, tbody) {
   var tr, td;
   tbody = document.getElementById(tbody);
   tbody.innerHTML = "";
   for (var i = 0; i < location.length; i++) {
     tr = tbody.insertRow(tbody.rows.length);
+    // td = tr.insertCell(tr.cells.length);
+    // td.innerHTML = location[i].Zone;
     td = tr.insertCell(tr.cells.length);
     td.innerHTML = location[i].Name;
     td = tr.insertCell(tr.cells.length);
@@ -120,12 +167,17 @@ function renderTable(location, tbody) {
     td.innerHTML = location[i].Changetime;
   }
 }
-function renderOptions(_data2) {
-  let arrayA = [..._data2];
+
+function renderOptions(_data) {
+  let arrayA = [..._data];
+  // 先將Zone印出
+
+  // 將過濾的 zone 回傳到DOM ============================================================================
   let select = "";
   let list = "";
+
   for (var i = 0; zones.length > i; i++) {
-    list += `<li><a href="#">${_data2[i].Add}</a></li>`;
+    list += `<li><a href="#">${_data[i].Add}</a></li>`;
     select += `<option>${zones[i]}</option>`;
     onSelect.innerHTML = select;
   }
